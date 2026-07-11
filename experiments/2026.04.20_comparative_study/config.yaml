@@ -1,0 +1,1032 @@
+models:
+  Aptos:
+    grading:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/1Z459DkNHWTsXjrZ9n_6kmGn3-_d75cDf/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 100
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/1PdAqG6nFAqjn6jLbDCBHDwlLd6HepsTT/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 81
+          early_stopping: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1Z8e0jH0WZ6revpuvaf7cRAJBT5bLeE7l/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 34
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1BlUZVJo8nKgYK4sipESrG9ammeTEeoT4/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 21
+          epochs_head: 10
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1f5mulk8pHKfzu2kUXzRAU9fjSVeSzYF_/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 47
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1VyhcZXzSUryyez8rF_StwbFiTnMjvLEg/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 22
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1N5BuLh4RbEL_TIqHuvS80G4n4Abt02Y6/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 22
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1ETox4Q8LwHGl9LB82LJ7uiOp18w1Ib-1/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 38
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1NY6hmZ7dBrklb8dEg9gbph_izLHmoac-/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 29
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1S7VjBBBB6TeLe1DTnxEELozgjqhNCsV-/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 33
+          early_stopping: true
+        settings: null
+    binary:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/17KkRwVLzp3fRRQSkgcLNil6P8fWRDSXg/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 21
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/1Ea8dKzLY754aJ6mpB8u_xr5HnEKDbvLk/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 42
+          early_stopping: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1ZQ4rCJ87vLV7fYKIYhccMBVS7dO6O2Qp/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 30
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1zRFy6j41wtDi-ca8DvRyfZaNWJ7TK0ez/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 22
+          epochs_head: 10
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1WxxFKAHcIRRH32DsUeIjuQTZOZewQEYo/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 34
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1DgpzZRa0a_7ZLMLBT0JnRLHXPhcbWsYC/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 23
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1oReWgLs0e7cp09qkzYV8_Egj0wkh3wZk/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 23
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1SIVnQvMR6A0uPaAQlGhRMQyMMDDILhQC/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 51
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1bJFNHVIetMnc1iCl_fxIGSxzEzRtlOUa/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 21
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1cBVebksDhEu0BR2ubv55xVLAugSl7EXj/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 22
+          early_stopping: true
+        settings: null
+  IDRiD:
+    grading:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/1jZJ4mMQVipGYDrElLY2pPYd_7A2Rqhru/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 21
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/15LrxW7eu-sXy9SGKDt0ReFCGlMtV7Wmx/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 29
+          early_stopping: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/17NLCV49aRZL_XXciNqVSIDGGRP43inAU/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 32
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1SAtzqo8PSNT3FfpEgKS9p6GCiXpGnTib/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 21
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1hS5W-nncN25nAjQFA9RkOHVygJYv_E23/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 25
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1ceIG4YkK9uKGU2SP5fZtVPNfEhSBo4f5/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 21
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: null
+        global_settings: null
+        settings: null
+      ResNet50Pretrained__variant_row11:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1E4L1nr8d0EBqa9-Y4SxLkajd2haNmhzN/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 21
+      ResNet50Pretrained__variant_row12:
+        code_url: null
+        model_weights_url: null
+        global_settings: null
+        settings: null
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1gmdcjNEQQtm8FLviHXSKJNlmVMtfuyhV/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 18
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1IXOoHIkqx2OMKwtyejwAWSeW4JG6j90N/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 23
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1kacNeqJwgiI4tMA7r0CTPisUWT6PvzQJ/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 36
+          early_stopping: true
+        settings: null
+    binary:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/1Qe9hZQDjNDIZZ5qTNdmGLqP0HA3l3Adb/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 22
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/1yqKsxJR4NJZi-vgRyBzj35hGkBxukoF_/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 18
+          early_stopping: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1AEIrxAelPySywSB9tjeUOprTucp0_lg-/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 22
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1L6vOqpMOaZb9Xs0X-vXzZDY3ZAW5xDRZ/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 21
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1guC5o6ZAAyEruwbm_YAA8qLxDvnGUztQ/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 23
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1AeuYppKRkCficDRpomyUse8PtiaYSB9m/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 21
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/17YBqpfQR4iKucs16ofvIx9VT324eT33c/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 21
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1OdtHMicqQWVe96a41Sonvdw1gMxORnZt/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 12
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1bJFNHVIetMnc1iCl_fxIGSxzEzRtlOUa/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 23
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1gX1mGJyfyImGRARG-hFnxy0kp3pDSnKz/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 14
+          early_stopping: true
+        settings: null
+  DDR:
+    grading:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/1wYYRyOSkZBN7x57tob7H5l4WVHPz_uPk/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 21
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/1heq7wQh9W5g49rjCaVyeOjiNmSGpk0Xr/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: null
+          early_stopping: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/13YeAJonYyEblmht8GffuVFd4XNLbcF4f/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 42
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1LitiwZyxN8bHfJ3HxgHJ_oDgUjH21hsE/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 22
+          epochs_head: 10
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1M5rQg7xH1GyHMgrtzuUIwuykk9CP_0dT/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 46
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1Uybhb0GsNgMzN5P0TxWTZKwLjQiWOE68/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 22
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1OmP4ndU1Rm3BCcRVXFDR-vSGxjL6YcSX/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 21
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1gAcGk8_UYZpG6jNAwYc7Y40K9XdRviq7/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 46
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1rF6RmL1BrQxYyvbuvFVDX7tDhz5J-wqX/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 26
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1Ffj81m56PSynCgEi2GB9ZIEMXtZ0i93x/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 41
+          early_stopping: true
+        settings: null
+    binary:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/1lasbHVxSBUbAFC4HLcvLFihWu1kqHSRE/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 23
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/1Tgxj7OdA2ZxwL7Waxl0hWYs1RupKo8sB/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 46
+          early_stopping: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1UIgDBCLZ8z4llw_qSiOyBXZI_Ch9IZzT/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 40
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1J7pXSTqr7PvVDdseCpce--ya7AOmDS86/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 24
+          epochs_head: 10
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1VCeQDUkberbi3SceSW4l02djMyn3LoHp/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 62
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1Ifrr-Pd9P9YrwmjPa5Bn_42WAO64Y9PS/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 24
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1fTGaiqYsu7iWL1IiuwBPrFsN2jb_V4l7/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 22
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1TBYaKbDrbZKS3XBAspmdSblOUD7rCrI4/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 41
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1D1ONhxlp_4hbelxMRfmnH5Dzd9wKIJUV/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 24
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1SGbERThpomBYUV_YTbPm5gfBji8V2F18/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 31
+          early_stopping: true
+        settings: null
+  Messidor-2:
+    grading:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/1ywblMM_WD2-KnuYBIm5gW-GdIXtOXDQY/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 21
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/15JKOYtM1PrL9oZsaFmCq-kDTQfHaOrci/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: null
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1749d7CxrCbGBRLOU6j2_ttah1L0R_y9h/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 29
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1MKb358lRFwob8JQdLQ1ziRC9X6-h6LVa/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 21
+          epochs_head: 10
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1-r12OBk4PfgnM3fnL9E7zVWgN_JHKY-2/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 36
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1ufPGxoFbd7aoO_CjsnlzWZwJjf3dDU3N/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 21
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1ufPGxoFbd7aoO_CjsnlzWZwJjf3dDU3N/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 21
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1KA0xmbrepEfcz8Dnm4otdMbImxYRmBl8/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 18
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1s7zdA1LSazcoKB5W38-Tw-zrTMCmUNL0/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 28
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1mTtOfu1_9S802V0DpY856EFz_01YUik7/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 69
+          early_stopping: true
+        settings: null
+    binary:
+      InceptionV3Pretrained:
+        code_url: https://drive.google.com/file/d/1IDnlma2qfM9h95WcorlE7jC2-HC2ugGa/view?usp=sharing
+        model_weights_url: https://drive.google.com/file/d/10y7-237nhSHfpXzXZ8PW7zAn7t1XkSI2/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 22
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+          auxiliary_classifier: true
+        settings: null
+      InceptionV3ScratchHand Crafted:
+        code_url: https://drive.google.com/file/d/1YFLS6zblnsh8TW1SnqhSSakE3Klk3DVD/view?usp=drive_link
+        model_weights_url: https://drive.google.com/file/d/1FRxEJ6lO1GRPs6-Rzi5Q6wuMLdaOJAMX/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_total: 69
+          epochs_head: 10
+          early_stopping: true
+          model_pretrained: true
+        settings: null
+      InceptionV3Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1kmV56CKnUzrbBiQUsCl9yk0eqKmm1ugh/view?usp=drive_link
+        global_settings:
+          img_size: 299
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 32
+          early_stopping: true
+        settings: null
+      VGG16Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1rd6iQ8GQwHFyKtFoul0GLcSSNzfau_q9/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 21
+          epochs_head: 10
+          unfreezed_blocks: 4,5
+          early_stopping: true
+        settings: null
+      VGG16Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1K0I7eKaIdN2v17bVZepcEGmOCFHcpXsZ/view?usp=drive_link
+        global_settings:
+          img_size: 224
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 17
+          early_stopping: true
+        settings: null
+      ResNet50Pretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1bxGmAg7PhW5_lW968i8BEw6UnquBMJy2/view?usp=drive_link
+        global_settings:
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs_head: 10
+          unfreezed_layers: 3,4
+          early_stopping: true
+        settings:
+          img_size: 256
+          freeze_bn: 'True'
+          epochs: 21
+      ResNet50Pretrained__variant_row10:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1ZTssiaAboBT30VwEVuLEvxPJgM0p5yLl/view?usp=drive_link
+        global_settings: null
+        settings:
+          img_size: 256
+          freeze_bn: 'False'
+          epochs: 21
+      ResNet50Scratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/19UVqhJ22VZTpYjOKg12JHuvVQw8GCLXK/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 35
+          early_stopping: true
+        settings: null
+      AlexNetPretrained:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/10j7eoCe_dwWbb4D4YviNdY5lM7lqq3VZ/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 22
+          epochs_head: 10
+          unfreezed_layers: 8,10
+          early_stopping: true
+        settings: null
+      AlexNetScratch:
+        code_url: null
+        model_weights_url: https://drive.google.com/file/d/1KKH3wsCvL6lF_uW4JyHkvxnZVFrLB31T/view?usp=drive_link
+        global_settings:
+          img_size: 256
+          test_split: 0.2
+          val_split: 0.1
+          batch_size: 16
+          balanced_split: true
+          epochs: 11
+          early_stopping: true
+        settings: null
