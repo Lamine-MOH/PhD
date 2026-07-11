@@ -1,0 +1,9 @@
+torch
+torchvision
+kagglehub
+gdown
+pandas
+Pillow
+matplotlib
+numpy
+scikit-learn
