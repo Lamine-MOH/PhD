@@ -7,6 +7,7 @@ import gdown
 import pandas as pd
 from PIL import Image
 import torch
+import torchvision.transforms as transforms
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
 import numpy as np
