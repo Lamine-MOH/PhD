@@ -15,15 +15,15 @@ from sklearn.model_selection import train_test_split
 
 
 def dataset_download(dataset_name, data_path="./Data/"):
-    if not dataset_name in ["Aptos", "IDRiD", "DDR", "Messidor-2"]:
-        print("Invalid Dataset name")
-        return
+    valid_datasets = ["Aptos", "IDRiD", "DDR", "Messidor-2"]
+    if dataset_name not in valid_datasets:
+        raise ValueError(f"Invalid dataset name '{dataset_name}'. Must be one of {valid_datasets}")
     
     print(f"Downloading {dataset_name} Dataset")
     
     # Aptos Dataset
     if dataset_name == "Aptos":        
-        path = kagglehub.dataset_download("mariaherrerot/aptos2019")
+        path = kagglehub.dataset_download("mariaherrerot/aptos2019", path=data_path)
         
     # IDRiD Dataset
     elif dataset_name == "IDRiD":        
@@ -43,16 +43,16 @@ def dataset_download(dataset_name, data_path="./Data/"):
         path = os.path.join(path, "B.Disease Grading/")
                 
     # DDR Dataset
-    if dataset_name == "DDR":
-        path = kagglehub.dataset_download("mariaherrerot/ddrdataset")
+    elif dataset_name == "DDR":
+        path = kagglehub.dataset_download("mariaherrerot/ddrdataset", path=data_path)
         
     # Messidor-2 Dataset
-    if dataset_name == "Messidor-2":
-        path = kagglehub.dataset_download("mariaherrerot/messidor2preprocess")
+    elif dataset_name == "Messidor-2":
+        path = kagglehub.dataset_download("mariaherrerot/messidor2preprocess", path=data_path)
         
     return path
 
-def dataset_prepare(dataset_name, download_path, save_path="./Data/", data_path="./Data/"):
+def dataset_prepare(dataset_name, download_path, save_path="./Data/"):
     dataset_path = os.path.join(save_path, dataset_name)
     images_path = os.path.join(dataset_path, "Images/") 
     
@@ -111,8 +111,7 @@ def dataset_prepare(dataset_name, download_path, save_path="./Data/", data_path=
         # Merge Labels
         df = pd.read_csv(os.path.join(download_path, 'DR_grading.csv'))
 
-        # add img extension
-        df["file_name"] = df["id_code"].astype(str) + "" 
+        df["file_name"] = df["id_code"]
 
         # save to csv
         df.to_csv(os.path.join(dataset_path, "labels.csv"), index=False)
@@ -125,8 +124,7 @@ def dataset_prepare(dataset_name, download_path, save_path="./Data/", data_path=
         # Merge Labels
         df = pd.read_csv(os.path.join(download_path, 'messidor_data.csv'))
 
-        # add img extension
-        df["file_name"] = df["id_code"].astype(str) + "" 
+        df["file_name"] = df["id_code"] 
 
         # save to csv
         df.to_csv(os.path.join(dataset_path, "labels.csv"), index=False)
@@ -171,12 +169,12 @@ class DRDataset(Dataset):
 
         return image, label
     
-def data_load(dataset_path, img_size, labels_type="Grading"):
+def create_dataset(dataset_path, img_size, labels_type="Grading"):
     images_path = os.path.join(dataset_path, "Images")
     df = pd.read_csv(os.path.join(dataset_path, 'labels.csv'))
    
     # Load Labels
-    y = torch.tensor(df["diagnosis"])
+    y = torch.tensor(df["diagnosis"], dtype=torch.long)
 
     # Apply Labels Type
     y = torch.where(y == 0, 0, 1) if labels_type == "Binary" else y
@@ -201,11 +199,8 @@ def plot_img_byClass(samples_dict, samples_per_class=5, figsize=(12, 8)):
 
     fig, axes = plt.subplots(nrows=samples_per_class,
                             ncols=num_classes,
-                            figsize=figsize)
-
-    # Standardize axes to 2D array
-    if num_classes == 1: axes = np.expand_dims(axes, axis=1)
-    if samples_per_class == 1: axes = np.expand_dims(axes, axis=0)
+                            figsize=figsize,
+                            squeeze=False)
 
     for col, class_name in enumerate(classes):
         images = samples_dict[class_name]
@@ -264,21 +259,26 @@ def get_random_samples_perClass(dataset, keys=None, samples_per_class=5, seed=20
 
 
 def data_split(dataset, test_split_ratio=0.2, val_split=False, val_split_ratio=0.1, seed=2026):
+    # Convert torch tensors to numpy for sklearn compatibility
+    labels_np = dataset.labels.numpy() if hasattr(dataset.labels, 'numpy') else np.array(dataset.labels)
+    file_names_np = dataset.file_names.numpy() if hasattr(dataset.file_names, 'numpy') else np.array(dataset.file_names)
+
     X_train_files, X_test_files, y_train, y_test = train_test_split(
-        dataset.file_names, dataset.labels,
+        file_names_np, labels_np,
         test_size=test_split_ratio,
         random_state=seed,
-        stratify= dataset.labels)
+        stratify=labels_np)
     
     if val_split:
         X_train_files, X_val_files, y_train, y_val = train_test_split(
             X_train_files, y_train,
             test_size=val_split_ratio,
             random_state=seed,
-            stratify= y_train)
-        
-    return (X_train_files, X_test_files, y_train, y_test) if not val_split else\
-        (X_train_files, X_val_files, X_test_files, y_train, y_val, y_test)
+            stratify=y_train)
+    else:
+        X_val_files, y_val = None, None
+
+    return X_train_files, X_val_files, X_test_files, y_train, y_val, y_test
         
 
 def seed_worker(worker_id):
